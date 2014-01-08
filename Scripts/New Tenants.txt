@@ -1,0 +1,96 @@
+--------------------------------Gavri ---------------------------------
+declare @tenantName varchar(50)
+set @tenantName = 'AmdocsNBU'
+
+declare @AdminName varchar(50)
+set @AdminName = 'Gavri d'
+
+declare @AdminEmail varchar(50)
+set @AdminEmail = 'gavrid@gmail.com'
+
+INSERT INTO [prioritizerDB].[dbo].[Tenant]([TenantName]) VALUES(@tenantName)
+
+--add default admin user with password = '1234' ------------------------
+declare @tenantID uniqueidentifier
+select @tenantID=ID from Tenant where TenantName= @tenantName
+insert into users (username,domainusername,email,tenantid,isadmin,[password])
+  values (@AdminName,'admin',@AdminEmail,@tenantID ,1,'81-DC-9B-DB-52-D0-4D-C2-00-36-DB-D8-31-3E-D0-55')
+GO
+
+
+------------------------------keren---------------------------------------
+declare @tenantName varchar(50)
+set @tenantName = 'kantoo'
+
+declare @AdminName varchar(50)
+set @AdminName = 'keren k'
+
+declare @AdminEmail varchar(50)
+set @AdminEmail = 'kkroglen@gmail.com'
+
+INSERT INTO [prioritizerDB].[dbo].[Tenant]([TenantName]) VALUES(@tenantName)
+
+--add default admin user with password = '1234' ------------------------
+declare @tenantID uniqueidentifier
+select @tenantID=ID from Tenant where TenantName= @tenantName
+insert into users (username,domainusername,email,tenantid,isadmin,[password])
+  values (@AdminName,'admin',@AdminEmail,@tenantID ,1,'81-DC-9B-DB-52-D0-4D-C2-00-36-DB-D8-31-3E-D0-55')
+GO
+
+
+-----------------------------------lili-----------------------------------------
+declare @tenantName varchar(50)
+set @tenantName = 'Artizone'
+
+declare @AdminName varchar(50)
+set @AdminName = 'lili s'
+
+declare @AdminEmail varchar(50)
+set @AdminEmail = 'lilis@artizone.com'
+
+INSERT INTO [prioritizerDB].[dbo].[Tenant]([TenantName]) VALUES(@tenantName)
+
+--add default admin user with password = '1234' ------------------------
+declare @tenantID uniqueidentifier
+select @tenantID=ID from Tenant where TenantName= @tenantName
+insert into users (username,domainusername,email,tenantid,isadmin,[password])
+  values (@AdminName,'admin',@AdminEmail,@tenantID ,1,'81-DC-9B-DB-52-D0-4D-C2-00-36-DB-D8-31-3E-D0-55')
+GO
+
+
+--------------------------------------Gilad hirsh---------------------------
+declare @tenantName varchar(50)
+set @tenantName = 'Modularity'
+
+declare @AdminName varchar(50)
+set @AdminName = 'Gilad'
+
+declare @AdminEmail varchar(50)
+set @AdminEmail = 'gilad@modularity.co.il'
+
+INSERT INTO [prioritizerDB].[dbo].[Tenant]([TenantName]) VALUES(@tenantName)
+
+--add default admin user with password = '1234' ------------------------
+declare @tenantID uniqueidentifier
+select @tenantID=ID from Tenant where TenantName= @tenantName
+insert into users (username,domainusername,email,tenantid,isadmin,[password])
+  values (@AdminName,'admin',@AdminEmail,@tenantID ,1,'81-DC-9B-DB-52-D0-4D-C2-00-36-DB-D8-31-3E-D0-55')
+GO
+-----------------------------------------------------------------------babylon------------------------------
+declare @tenantName varchar(50)
+set @tenantName = 'Babylon'
+
+declare @AdminName varchar(50)
+set @AdminName = 'Admin'
+
+declare @AdminEmail varchar(50)
+set @AdminEmail = 'Sahar@babylon.com'
+
+INSERT INTO [prioritizerDB].[dbo].[Tenant]([TenantName]) VALUES(@tenantName)
+
+--add default admin user with password = '1234' ------------------------
+declare @tenantID uniqueidentifier
+select @tenantID=ID from Tenant where TenantName= @tenantName
+insert into users (username,domainusername,email,tenantid,isadmin,[password])
+  values (@AdminName,'admin',@AdminEmail,@tenantID ,1,'81-DC-9B-DB-52-D0-4D-C2-00-36-DB-D8-31-3E-D0-55')
+GO

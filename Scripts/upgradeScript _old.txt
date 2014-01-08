@@ -1,0 +1,135 @@
+update meetings set updatedate = getdate();
+go
+update tasks set dateupdated = getdate();
+go
+--------------------------------------------------------------
+--drop table dbo.attachements
+--CREATE TABLE [dbo].[attachments](
+--	[ID] [int]IDENTITY(1,1) NOT NULL,
+--	[bin] [image] NULL,
+--	[taskID] [int] NULL,
+--	[fileName] [nvarchar](100) NULL,
+	
+-- CONSTRAINT [PK__attachments__0000000000000128] PRIMARY KEY CLUSTERED 
+--(
+--	[ID] ASC
+--)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+--) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+--GO
+--------------------------------------------------------------
+
+ALTER TABLE tasks ALTER COLUMN dateupdated datetime not NULL
+go
+--------------------------------------------------------------
+
+create unique index ix_domain_name on dbo.users(domainUserName)
+go
+
+--------------------------------------------------------------
+
+--version 2
+ALTER TABLE Tasks ADD hasAlert bit NULL
+go
+
+CREATE TABLE [dbo].[Alerts](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[taskID] [int] NOT NULL,
+	[nextAlert] [datetime] NULL,
+	[active] [bit] NULL,
+	[sendEmail] [bit] NULL,
+ CONSTRAINT [PK_Alerts] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+go
+
+
+ALTER TABLE Tasks ADD taskType int NOT NULL default 0
+GO
+
+------------version 10
+
+USE [prioritizerDB]
+GO
+
+/****** Object:  Table [dbo].[Tenant]    Script Date: 03/23/2013 22:44:00 ******/
+USE [prioritizerDB]
+GO
+
+/****** Object:  Table [dbo].[Tenant]    Script Date: 03/23/2013 22:57:35 ******/
+
+
+CREATE TABLE [dbo].[Tenant](
+	[ID] [uniqueidentifier] NOT NULL,
+	[TenantName] [nvarchar](100) NOT NULL,
+ CONSTRAINT [PK_Tenant] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY],
+ CONSTRAINT [IX_TenantNameUnique] UNIQUE NONCLUSTERED 
+(
+	[TenantName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Tenant] ADD  CONSTRAINT [DF_Tenant1_ID]  DEFAULT (newid()) FOR [ID]
+GO
+
+ALTER TABLE Users ADD IsAdmin bit not NULL default 0
+GO
+ALTER TABLE Users ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE Tasks ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE attachments ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE Alerts ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE ManagerTeamMemberRelations ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE MeetingAttendies ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE MeetingCategory ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE MeetingCategoryMap ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE Meetings ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE MeetingTasks ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE Notifications ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+ALTER TABLE projects ADD TenantID uniqueIdentifier not NULL default '61559893-32ca-445c-a686-a45c1d84be2d'
+GO
+
+
+UPDATE [ConfigTable] SET ConfigValue=10 where ConfigName='DBVer'
+GO
+
+------------version 11
+
+
+
+
+--not relevant
+/*
+ALTER TABLE Users ADD 
+	[PasswordQuestion] [nvarchar](256) NULL,
+	[PasswordAnswer] [nvarchar](128) NULL,
+	[CreateDate] [datetime]  NULL,
+	[LastLoginDate] [datetime]  NULL,
+	[LastPasswordChangedDate] [datetime]  NULL,
+	[LastLockoutDate] [datetime]  NULL,
+	[FailedPasswordAttemptCount] [int]  NULL,
+	[FailedPasswordAttemptWindowStart] [datetime]  NULL,
+	[FailedPasswordAnswerAttemptCount] [int]  NULL,
+	[FailedPasswordAnswerAttemptWindowStart] [datetime]  NULL,
+	[Comment] [ntext] NULL
+
+GO
+
+*/

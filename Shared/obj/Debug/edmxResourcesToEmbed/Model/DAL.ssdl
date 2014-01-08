@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prioritizerDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="prioritizerDBModelStoreContainer">
+    <EntitySet Name="Alerts" EntityType="prioritizerDBModel.Store.Alerts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="attachments" EntityType="prioritizerDBModel.Store.attachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConfigTable" EntityType="prioritizerDBModel.Store.ConfigTable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManagerTeamMemberRelations" EntityType="prioritizerDBModel.Store.ManagerTeamMemberRelations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeetingAttendies" EntityType="prioritizerDBModel.Store.MeetingAttendies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeetingCategory" EntityType="prioritizerDBModel.Store.MeetingCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeetingCategoryMap" EntityType="prioritizerDBModel.Store.MeetingCategoryMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Meetings" EntityType="prioritizerDBModel.Store.Meetings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeetingTasks" EntityType="prioritizerDBModel.Store.MeetingTasks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notifications" EntityType="prioritizerDBModel.Store.Notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NotificationType" EntityType="prioritizerDBModel.Store.NotificationType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="projects" EntityType="prioritizerDBModel.Store.projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tasks" EntityType="prioritizerDBModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaskStatus" EntityType="prioritizerDBModel.Store.TaskStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tenant" EntityType="prioritizerDBModel.Store.Tenant" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="prioritizerDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Alerts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="taskID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="nextAlert" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="sendEmail" Type="bit" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bin" Type="image" />
+    <Property Name="taskID" Type="uniqueidentifier" />
+    <Property Name="fileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfigTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ConfigName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConfigValue" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ManagerTeamMemberRelations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManagerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TeamMemberID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeetingAttendies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeetingID" Type="uniqueidentifier" />
+    <Property Name="AttendeeID" Type="uniqueidentifier" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeetingCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CategoryOwner" Type="uniqueidentifier" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeetingCategoryMap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeetingID" Type="uniqueidentifier" />
+    <Property Name="MeetingCategoryID" Type="uniqueidentifier" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Meetings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeetingName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MeetingOwner" Type="uniqueidentifier" />
+    <Property Name="MeetingDate" Type="datetime" />
+    <Property Name="MeetingSummaryRTF" Type="image" />
+    <Property Name="updateDate" Type="datetime" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeetingTasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeetingID" Type="uniqueidentifier" />
+    <Property Name="TaskID" Type="uniqueidentifier" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="uniqueidentifier" />
+    <Property Name="projectID" Type="uniqueidentifier" />
+    <Property Name="NotificationRecipientID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotificationTypeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotificationType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="notificationTypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="projectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="priority" Type="int" />
+    <Property Name="taskName" Type="nvarchar" MaxLength="256" />
+    <Property Name="estimatedWorkHours" Type="int" />
+    <Property Name="completionPercentage" Type="int" />
+    <Property Name="remarks" Type="ntext" />
+    <Property Name="projectID" Type="uniqueidentifier" />
+    <Property Name="userID" Type="uniqueidentifier" />
+    <Property Name="requesterID" Type="uniqueidentifier" />
+    <Property Name="updateRequester" Type="bit" />
+    <Property Name="taskStatusID" Type="int" />
+    <Property Name="defectNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateEntered" Type="datetime" />
+    <Property Name="UpdatesLog" Type="ntext" />
+    <Property Name="dateClosed" Type="datetime" />
+    <Property Name="actualWorkHours" Type="int" />
+    <Property Name="dueDate" Type="datetime" />
+    <Property Name="dateUpdated" Type="datetime" Nullable="false" />
+    <Property Name="hasAttachment" Type="bit" />
+    <Property Name="hasAlert" Type="bit" />
+    <Property Name="taskType" Type="int" Nullable="false" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CopiedFromTaskID" Type="uniqueidentifier" />
+    <Property Name="privateTask" Type="bit" Nullable="false" />
+    <Property Name="Importance" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenantName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="domainUserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TenantID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Activated" Type="bit" Nullable="false" />
+    <Property Name="TemporaryPassword" Type="bit" Nullable="false" />
+  </EntityType>
+</Schema>

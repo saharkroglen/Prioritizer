@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteStruct.Master.cs" Inherits="PrioritizerService.SiteStruct" %>
+
+<%@ Register Src="SiteHeaderUC.ascx"  TagName="SiteHeaderUC"  TagPrefix="SiteHeaderUC"  %>
+<%@ Register Src="SiteContentUC.ascx" TagName="SiteContentUC" TagPrefix="SiteContentUC" %>
+<%@ Register Src="SiteFooterUC.ascx"  TagName="SiteFooterUC"  TagPrefix="SiteFooterUC"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Priori</title>
+    <link href="Style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Incs/CodeDesigner.js"></script>
+    <script type="text/javascript" src="Incs/Utils.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+<form id="frmSite" runat="server">
+
+<asp:ScriptManager ID="AjaxScriptManager" runat="server" LoadScriptsBeforeUI="true"></asp:ScriptManager>
+
+<div id="Site" >        
+    <div id="SiteHeader" style="display:<%=VisibileOnNonPrintOnly%>;margin:0 0 0 0;" align="center" >
+        <asp:ContentPlaceHolder ID="cphSiteHeader" runat="server">
+            <SiteHeaderUC:SiteHeaderUC ID="ucSiteHeader" runat="server" />
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    <div id="SiteContent" style="margin:0 0 0 0; " align="center"> 
+        <!-- Site Map Navigastion -->
+        <div id="SiteMapNavigastion" style="display:<%=VisibileOnNonPrintOnly%>;margin:0 0 0 0;" align="left" >
+            <asp:SiteMapPath ID="SiteMapPath" runat="server"></asp:SiteMapPath>
+        </div>
+        <div id="SiteContentChild" style="width:1000px;margin:0 0 0 0;" align="center" >    
+            <asp:ContentPlaceHolder ID="cphSiteContent" runat="server">
+                <SiteContentUC:SiteContentUC ID="ucSiteContent" runat="server" />
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    
+    <div id="Div1" style=" margin:0 0 0 0; " align="center"> 
+        <div id="SiteFooter" style="display:<%=VisibileOnNonPrintOnly%>;margin:0 0 0 0;" align="center" >    
+            <asp:ContentPlaceHolder ID="cphSiteFooter" runat="server">
+                <SiteFooterUC:SiteFooterUC ID="ucSiteFooter" runat="server" />
+            </asp:ContentPlaceHolder>        
+        </div>
+    </div>
+    
+</div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prioritizerDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="prioritizerDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NotificationType" EntityType="prioritizerDBModel.NotificationType" />
+    <EntitySet Name="TaskStatus" EntityType="prioritizerDBModel.TaskStatus" />
+    <EntitySet Name="Users" EntityType="prioritizerDBModel.Users" />
+    <EntitySet Name="projects" EntityType="prioritizerDBModel.projects" />
+    <EntitySet Name="Tasks" EntityType="prioritizerDBModel.Tasks" />
+    <EntitySet Name="ConfigTable" EntityType="prioritizerDBModel.ConfigTable" />
+    <EntitySet Name="Meetings" EntityType="prioritizerDBModel.Meetings" />
+    <EntitySet Name="MeetingTasks" EntityType="prioritizerDBModel.MeetingTasks" />
+    <AssociationSet Name="MeetingsMeetingTasks" Association="prioritizerDBModel.MeetingsMeetingTasks">
+      <End Role="Meetings" EntitySet="Meetings" />
+      <End Role="MeetingTasks" EntitySet="MeetingTasks" />
+    </AssociationSet>
+    <AssociationSet Name="TasksMeetingTasks" Association="prioritizerDBModel.TasksMeetingTasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="MeetingTasks" EntitySet="MeetingTasks" />
+    </AssociationSet>
+    <AssociationSet Name="UsersMeetings" Association="prioritizerDBModel.UsersMeetings">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Meetings" EntitySet="Meetings" />
+    </AssociationSet>
+    <EntitySet Name="MeetingAttendies" EntityType="prioritizerDBModel.MeetingAttendies" />
+    <AssociationSet Name="UsersMeetingAttendies" Association="prioritizerDBModel.UsersMeetingAttendies">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MeetingAttendies" EntitySet="MeetingAttendies" />
+    </AssociationSet>
+    <AssociationSet Name="MeetingsMeetingAttendies" Association="prioritizerDBModel.MeetingsMeetingAttendies">
+      <End Role="Meetings" EntitySet="Meetings" />
+      <End Role="MeetingAttendies" EntitySet="MeetingAttendies" />
+    </AssociationSet>
+    <EntitySet Name="MeetingCategory" EntityType="prioritizerDBModel.MeetingCategory" />
+    <EntitySet Name="MeetingCategoryMap" EntityType="prioritizerDBModel.MeetingCategoryMap" />
+    <AssociationSet Name="UsersMeetingCategory" Association="prioritizerDBModel.UsersMeetingCategory">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MeetingCategory" EntitySet="MeetingCategory" />
+    </AssociationSet>
+    <AssociationSet Name="MeetingsMeetingCategoryMap" Association="prioritizerDBModel.MeetingsMeetingCategoryMap">
+      <End Role="Meetings" EntitySet="Meetings" />
+      <End Role="MeetingCategoryMap" EntitySet="MeetingCategoryMap" />
+    </AssociationSet>
+    <AssociationSet Name="MeetingCategoryMeetingCategoryMap" Association="prioritizerDBModel.MeetingCategoryMeetingCategoryMap">
+      <End Role="MeetingCategory" EntitySet="MeetingCategory" />
+      <End Role="MeetingCategoryMap" EntitySet="MeetingCategoryMap" />
+    </AssociationSet>
+    <EntitySet Name="Notifications" EntityType="prioritizerDBModel.Notifications" />
+    <EntitySet Name="ManagerTeamMemberRelations" EntityType="prioritizerDBModel.ManagerTeamMemberRelations" />
+    <AssociationSet Name="ManagerTeamMemberRelationsUsers" Association="prioritizerDBModel.ManagerTeamMemberRelationsUsers">
+      <End Role="ManagerTeamMemberRelations" EntitySet="ManagerTeamMemberRelations" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="ManagerTeamMemberRelationsUsers1" Association="prioritizerDBModel.ManagerTeamMemberRelationsUsers1">
+      <End Role="ManagerTeamMemberRelations" EntitySet="ManagerTeamMemberRelations" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="attachments" EntityType="prioritizerDBModel.attachments" />
+    <EntitySet Name="Alerts" EntityType="prioritizerDBModel.Alerts" />
+    <AssociationSet Name="TasksAlerts" Association="prioritizerDBModel.TasksAlerts">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Alerts" EntitySet="Alerts" />
+    </AssociationSet>
+    <EntitySet Name="Tenant" EntityType="prioritizerDBModel.Tenant" />
+    <AssociationSet Name="TenantUsers" Association="prioritizerDBModel.TenantUsers">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="TenantTasks" Association="prioritizerDBModel.TenantTasks">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="TenantNotifications" Association="prioritizerDBModel.TenantNotifications">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="TenantAlerts" Association="prioritizerDBModel.TenantAlerts">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Alerts" EntitySet="Alerts" />
+    </AssociationSet>
+    <AssociationSet Name="Tenantattachments" Association="prioritizerDBModel.Tenantattachments">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="attachments" EntitySet="attachments" />
+    </AssociationSet>
+    <AssociationSet Name="TenantManagerTeamMemberRelations" Association="prioritizerDBModel.TenantManagerTeamMemberRelations">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="ManagerTeamMemberRelations" EntitySet="ManagerTeamMemberRelations" />
+    </AssociationSet>
+    <AssociationSet Name="TenantMeetingAttendies" Association="prioritizerDBModel.TenantMeetingAttendies">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="MeetingAttendies" EntitySet="MeetingAttendies" />
+    </AssociationSet>
+    <AssociationSet Name="TenantMeetingCategory" Association="prioritizerDBModel.TenantMeetingCategory">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="MeetingCategory" EntitySet="MeetingCategory" />
+    </AssociationSet>
+    <AssociationSet Name="TenantMeetingCategoryMap" Association="prioritizerDBModel.TenantMeetingCategoryMap">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="MeetingCategoryMap" EntitySet="MeetingCategoryMap" />
+    </AssociationSet>
+    <AssociationSet Name="TenantMeetings" Association="prioritizerDBModel.TenantMeetings">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Meetings" EntitySet="Meetings" />
+    </AssociationSet>
+    <AssociationSet Name="TenantMeetingTasks" Association="prioritizerDBModel.TenantMeetingTasks">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="MeetingTasks" EntitySet="MeetingTasks" />
+    </AssociationSet>
+    <AssociationSet Name="Tenantprojects" Association="prioritizerDBModel.Tenantprojects">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="projects" EntitySet="projects" />
+    </AssociationSet>
+    <AssociationSet Name="TasksTasks" Association="prioritizerDBModel.TasksTasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Tasks1" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="projectsTasks" Association="prioritizerDBModel.projectsTasks">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="TasksUsers" Association="prioritizerDBModel.TasksUsers">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NotificationType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="notificationTypeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaskStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="userName" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="domainUserName" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="email" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Meetings" Relationship="prioritizerDBModel.UsersMeetings" FromRole="Users" ToRole="Meetings" />
+    <NavigationProperty Name="MeetingAttendies" Relationship="prioritizerDBModel.UsersMeetingAttendies" FromRole="Users" ToRole="MeetingAttendies" />
+    <NavigationProperty Name="MeetingCategory" Relationship="prioritizerDBModel.UsersMeetingCategory" FromRole="Users" ToRole="MeetingCategory" />
+    <NavigationProperty Name="UserID_ManagerID" Relationship="prioritizerDBModel.ManagerTeamMemberRelationsUsers" FromRole="Users" ToRole="ManagerTeamMemberRelations" />
+    <NavigationProperty Name="UserID_TeamMemberID" Relationship="prioritizerDBModel.ManagerTeamMemberRelationsUsers1" FromRole="Users" ToRole="ManagerTeamMemberRelations" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <Property Type="Boolean" Name="IsAdmin" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantUsers" FromRole="Users" ToRole="Tenant" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Activated" Nullable="false" />
+    <Property Type="Boolean" Name="TemporaryPassword" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="prioritizerDBModel.TasksUsers" FromRole="Users" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="projectName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.Tenantprojects" FromRole="projects" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="priority" />
+    <Property Type="String" Name="taskName" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="estimatedWorkHours" />
+    <Property Type="Int32" Name="completionPercentage" />
+    <Property Type="String" Name="remarks" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="projectID" />
+    <Property Type="Guid" Name="userID" />
+    <Property Type="Guid" Name="requesterID" />
+    <Property Type="Boolean" Name="updateRequester" />
+    <Property Type="Int32" Name="taskStatusID" />
+    <Property Type="String" Name="defectNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="dateEntered" />
+    <Property Type="String" Name="UpdatesLog" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="dateClosed" />
+    <Property Type="Int32" Name="actualWorkHours" />
+    <Property Type="DateTime" Name="dueDate" />
+    <Property Type="DateTime" Name="dateUpdated" ConcurrencyMode="Fixed" Nullable="false" />
+    <Property Type="Boolean" Name="hasAttachment" Nullable="true" />
+    <NavigationProperty Name="MeetingTasks" Relationship="prioritizerDBModel.TasksMeetingTasks" FromRole="Tasks" ToRole="MeetingTasks" />
+    <Property Type="Boolean" Name="hasAlert" />
+    <NavigationProperty Name="Alerts" Relationship="prioritizerDBModel.TasksAlerts" FromRole="Tasks" ToRole="Alerts" />
+    <Property Type="Int32" Name="taskType" Nullable="false" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantTasks" FromRole="Tasks" ToRole="Tenant" />
+    <Property Type="Guid" Name="CopiedFromTaskID" />
+    <NavigationProperty Name="TasksCopiedFromCurrentTask" Relationship="prioritizerDBModel.TasksTasks" FromRole="Tasks" ToRole="Tasks1" />
+    <NavigationProperty Name="TaskIWasCopiedFrom" Relationship="prioritizerDBModel.TasksTasks" FromRole="Tasks1" ToRole="Tasks" />
+    <Property Type="Boolean" Name="privateTask" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="prioritizerDBModel.TasksUsers" FromRole="Tasks" ToRole="Users" />
+    <Property Type="Int32" Name="Importance" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfigTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ConfigName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConfigValue" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Meetings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MeetingName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="MeetingOwner" Nullable="false" />
+    <Property Type="DateTime" Name="MeetingDate" />
+    <NavigationProperty Name="MeetingTasks" Relationship="prioritizerDBModel.MeetingsMeetingTasks" FromRole="Meetings" ToRole="MeetingTasks" />
+    <NavigationProperty Name="Users" Relationship="prioritizerDBModel.UsersMeetings" FromRole="Meetings" ToRole="Users" />
+    <NavigationProperty Name="MeetingAttendies" Relationship="prioritizerDBModel.MeetingsMeetingAttendies" FromRole="Meetings" ToRole="MeetingAttendies" />
+    <NavigationProperty Name="MeetingCategoryMap" Relationship="prioritizerDBModel.MeetingsMeetingCategoryMap" FromRole="Meetings" ToRole="MeetingCategoryMap" />
+    <Property Type="Binary" Name="MeetingSummaryRTF" MaxLength="Max" FixedLength="false" />
+    <Property Type="DateTime" Name="updateDate" ConcurrencyMode="Fixed" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantMeetings" FromRole="Meetings" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="MeetingTasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="MeetingID" Nullable="false" />
+    <Property Type="Guid" Name="TaskID" Nullable="false" />
+    <NavigationProperty Name="Meetings" Relationship="prioritizerDBModel.MeetingsMeetingTasks" FromRole="MeetingTasks" ToRole="Meetings" />
+    <NavigationProperty Name="Tasks" Relationship="prioritizerDBModel.TasksMeetingTasks" FromRole="MeetingTasks" ToRole="Tasks" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantMeetingTasks" FromRole="MeetingTasks" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="MeetingsMeetingTasks">
+    <End Type="prioritizerDBModel.Meetings" Role="Meetings" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingTasks" Role="MeetingTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meetings">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingTasks">
+        <PropertyRef Name="MeetingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TasksMeetingTasks">
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingTasks" Role="MeetingTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingTasks">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersMeetings">
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Meetings" Role="Meetings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Meetings">
+        <PropertyRef Name="MeetingOwner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MeetingAttendies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="MeetingID" Nullable="false" />
+    <Property Type="Guid" Name="AttendeeID" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="prioritizerDBModel.UsersMeetingAttendies" FromRole="MeetingAttendies" ToRole="Users" />
+    <NavigationProperty Name="Meetings" Relationship="prioritizerDBModel.MeetingsMeetingAttendies" FromRole="MeetingAttendies" ToRole="Meetings" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantMeetingAttendies" FromRole="MeetingAttendies" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="UsersMeetingAttendies">
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingAttendies" Role="MeetingAttendies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingAttendies">
+        <PropertyRef Name="AttendeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MeetingsMeetingAttendies">
+    <End Type="prioritizerDBModel.Meetings" Role="Meetings" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingAttendies" Role="MeetingAttendies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meetings">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingAttendies">
+        <PropertyRef Name="MeetingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ComplexType1">
+    <Property Type="String" Name="MeetingName" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="MeetingCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="CategoryName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="CategoryOwner" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="prioritizerDBModel.UsersMeetingCategory" FromRole="MeetingCategory" ToRole="Users" />
+    <NavigationProperty Name="MeetingCategoryMap" Relationship="prioritizerDBModel.MeetingCategoryMeetingCategoryMap" FromRole="MeetingCategory" ToRole="MeetingCategoryMap" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantMeetingCategory" FromRole="MeetingCategory" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="MeetingCategoryMap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="MeetingID" />
+    <Property Type="Guid" Name="MeetingCategoryID" />
+    <NavigationProperty Name="Meetings" Relationship="prioritizerDBModel.MeetingsMeetingCategoryMap" FromRole="MeetingCategoryMap" ToRole="Meetings" />
+    <NavigationProperty Name="MeetingCategory" Relationship="prioritizerDBModel.MeetingCategoryMeetingCategoryMap" FromRole="MeetingCategoryMap" ToRole="MeetingCategory" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantMeetingCategoryMap" FromRole="MeetingCategoryMap" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="UsersMeetingCategory">
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingCategory" Role="MeetingCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingCategory">
+        <PropertyRef Name="CategoryOwner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MeetingsMeetingCategoryMap">
+    <End Type="prioritizerDBModel.Meetings" Role="Meetings" Multiplicity="0..1" />
+    <End Type="prioritizerDBModel.MeetingCategoryMap" Role="MeetingCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meetings">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingCategoryMap">
+        <PropertyRef Name="MeetingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MeetingCategoryMeetingCategoryMap">
+    <End Type="prioritizerDBModel.MeetingCategory" Role="MeetingCategory" Multiplicity="0..1" />
+    <End Type="prioritizerDBModel.MeetingCategoryMap" Role="MeetingCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeetingCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingCategoryMap">
+        <PropertyRef Name="MeetingCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="userID" />
+    <Property Type="Guid" Name="projectID" />
+    <Property Type="Guid" Name="NotificationRecipientID" Nullable="false" />
+    <Property Type="Guid" Name="NotificationTypeID" Nullable="false" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantNotifications" FromRole="Notifications" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="ManagerTeamMemberRelations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="ManagerID" Nullable="false" />
+    <Property Type="Guid" Name="TeamMemberID" Nullable="false" />
+    <NavigationProperty Name="ManagerID_UserID" Relationship="prioritizerDBModel.ManagerTeamMemberRelationsUsers" FromRole="ManagerTeamMemberRelations" ToRole="Users" />
+    <NavigationProperty Name="TeamMemberID_UserID" Relationship="prioritizerDBModel.ManagerTeamMemberRelationsUsers1" FromRole="ManagerTeamMemberRelations" ToRole="Users" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantManagerTeamMemberRelations" FromRole="ManagerTeamMemberRelations" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="ManagerTeamMemberRelationsUsers">
+    <End Type="prioritizerDBModel.ManagerTeamMemberRelations" Role="ManagerTeamMemberRelations" Multiplicity="*" />
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ManagerTeamMemberRelations">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManagerTeamMemberRelationsUsers1">
+    <End Type="prioritizerDBModel.ManagerTeamMemberRelations" Role="ManagerTeamMemberRelations" Multiplicity="*" />
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ManagerTeamMemberRelations">
+        <PropertyRef Name="TeamMemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Binary" Name="bin" MaxLength="Max" FixedLength="false" />
+    <Property Type="Guid" Name="taskID" />
+    <Property Type="String" Name="fileName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.Tenantattachments" FromRole="attachments" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="Alerts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="taskID" Nullable="false" />
+    <Property Type="DateTime" Name="nextAlert" />
+    <Property Type="Boolean" Name="active" />
+    <Property Type="Boolean" Name="sendEmail" />
+    <NavigationProperty Name="Tasks" Relationship="prioritizerDBModel.TasksAlerts" FromRole="Alerts" ToRole="Tasks" />
+    <Property Type="Guid" Name="TenantID" Nullable="false" />
+    <NavigationProperty Name="Tenant" Relationship="prioritizerDBModel.TenantAlerts" FromRole="Alerts" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="TasksAlerts">
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Alerts" Role="Alerts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alerts">
+        <PropertyRef Name="taskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TenantName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="prioritizerDBModel.TenantUsers" FromRole="Tenant" ToRole="Users" />
+    <NavigationProperty Name="Tasks" Relationship="prioritizerDBModel.TenantTasks" FromRole="Tenant" ToRole="Tasks" />
+    <NavigationProperty Name="Notifications" Relationship="prioritizerDBModel.TenantNotifications" FromRole="Tenant" ToRole="Notifications" />
+    <NavigationProperty Name="Alerts" Relationship="prioritizerDBModel.TenantAlerts" FromRole="Tenant" ToRole="Alerts" />
+    <NavigationProperty Name="attachments" Relationship="prioritizerDBModel.Tenantattachments" FromRole="Tenant" ToRole="attachments" />
+    <NavigationProperty Name="ManagerTeamMemberRelations" Relationship="prioritizerDBModel.TenantManagerTeamMemberRelations" FromRole="Tenant" ToRole="ManagerTeamMemberRelations" />
+    <NavigationProperty Name="MeetingAttendies" Relationship="prioritizerDBModel.TenantMeetingAttendies" FromRole="Tenant" ToRole="MeetingAttendies" />
+    <NavigationProperty Name="MeetingCategory" Relationship="prioritizerDBModel.TenantMeetingCategory" FromRole="Tenant" ToRole="MeetingCategory" />
+    <NavigationProperty Name="MeetingCategoryMap" Relationship="prioritizerDBModel.TenantMeetingCategoryMap" FromRole="Tenant" ToRole="MeetingCategoryMap" />
+    <NavigationProperty Name="Meetings" Relationship="prioritizerDBModel.TenantMeetings" FromRole="Tenant" ToRole="Meetings" />
+    <NavigationProperty Name="MeetingTasks" Relationship="prioritizerDBModel.TenantMeetingTasks" FromRole="Tenant" ToRole="MeetingTasks" />
+    <NavigationProperty Name="projects" Relationship="prioritizerDBModel.Tenantprojects" FromRole="Tenant" ToRole="projects" />
+  </EntityType>
+  <Association Name="TenantUsers">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantTasks">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantNotifications">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Notifications" Role="Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantAlerts">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Alerts" Role="Alerts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alerts">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tenantattachments">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.attachments" Role="attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="attachments">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantManagerTeamMemberRelations">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.ManagerTeamMemberRelations" Role="ManagerTeamMemberRelations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ManagerTeamMemberRelations">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantMeetingAttendies">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingAttendies" Role="MeetingAttendies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingAttendies">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantMeetingCategory">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingCategory" Role="MeetingCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingCategory">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantMeetingCategoryMap">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingCategoryMap" Role="MeetingCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingCategoryMap">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantMeetings">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.Meetings" Role="Meetings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Meetings">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TenantMeetingTasks">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.MeetingTasks" Role="MeetingTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MeetingTasks">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tenantprojects">
+    <End Type="prioritizerDBModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="prioritizerDBModel.projects" Role="projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="projects">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TasksTasks">
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks1">
+        <PropertyRef Name="CopiedFromTaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="projectsTasks">
+    <End Type="prioritizerDBModel.projects" Role="projects" Multiplicity="0..1" />
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TasksUsers">
+    <End Type="prioritizerDBModel.Tasks" Role="Tasks" Multiplicity="*" />
+    <End Type="prioritizerDBModel.Users" Role="Users" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

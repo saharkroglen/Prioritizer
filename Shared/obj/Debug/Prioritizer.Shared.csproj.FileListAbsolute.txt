@@ -1,0 +1,9 @@
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\Shared.dll.config
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\Shared.dll
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\Shared.pdb
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\log4net.dll
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\Newtonsoft.Json.dll
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\log4net.xml
+D:\Dropbox\work\Prioritizer\Shared\bin\Debug\Newtonsoft.Json.xml
+D:\Dropbox\work\Prioritizer\Shared\obj\Debug\Shared.dll
+D:\Dropbox\work\Prioritizer\Shared\obj\Debug\Shared.pdb

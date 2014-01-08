@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{138BF1ED-352D-400B-9607-C78F786E280A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prioritizer.Shared</RootNamespace>
+    <AssemblyName>Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientMessages.cs" />
+    <Compile Include="ClientPackage.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="ImportanceItem.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Model\Alerts.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\attachments.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ComplexType1.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ConfigTable.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DAL.Designer.cs">
+      <DependentUpon>DAL.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\ManagerTeamMemberRelations.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MeetingAttendies.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MeetingCategory.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MeetingCategoryMap.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Meetings.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MeetingTasks.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Notifications.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NotificationType.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\projects.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelfTrackingEntity_Generator.Context.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\SelfTrackingEntity_Generator.Context.Extensions.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelfTrackingEntity_Generator.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\Tasks.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TaskStatus.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tenant.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UnitOfWork.cs" />
+    <Compile Include="Model\Users.cs">
+      <DependentUpon>SelfTrackingEntity_Generator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TasksPartial.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\DAL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DAL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Model\SelfTrackingEntity_Generator.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SelfTrackingEntity_Generator.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model\SelfTrackingEntity_Generator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SelfTrackingEntity_Generator.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

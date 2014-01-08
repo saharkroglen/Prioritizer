@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="attachDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="attachDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="attachments" EntityType="attachDBModel.attachments" />
+  </EntityContainer>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Binary" Name="bin" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="taskID" />
+    <Property Type="String" Name="fileName" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

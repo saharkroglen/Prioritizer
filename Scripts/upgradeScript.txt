@@ -1,0 +1,6 @@
+
+ALTER TABLE Tasks ADD Importance int NOT NULL default 0
+go
+UPDATE [ConfigTable] SET ConfigValue=1 where ConfigName='DBVer'
+GO
+----------------------------

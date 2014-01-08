@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prioritizerDBModelStoreContainer" CdmEntityContainer="prioritizerDBEntities">
+    <EntitySetMapping Name="NotificationType">
+      <EntityTypeMapping TypeName="prioritizerDBModel.NotificationType">
+        <MappingFragment StoreEntitySet="NotificationType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="notificationTypeName" ColumnName="notificationTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskStatus">
+      <EntityTypeMapping TypeName="prioritizerDBModel.TaskStatus">
+        <MappingFragment StoreEntitySet="TaskStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="prioritizerDBModel.projects">
+        <MappingFragment StoreEntitySet="projects">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="prioritizerDBModel.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+          <ScalarProperty Name="privateTask" ColumnName="privateTask" />
+          <ScalarProperty Name="CopiedFromTaskID" ColumnName="CopiedFromTaskID" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="taskType" ColumnName="taskType" />
+          <ScalarProperty Name="hasAlert" ColumnName="hasAlert" />
+          <ScalarProperty Name="hasAttachment" ColumnName="hasAttachment" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="actualWorkHours" ColumnName="actualWorkHours" />
+          <ScalarProperty Name="dateClosed" ColumnName="dateClosed" />
+          <ScalarProperty Name="UpdatesLog" ColumnName="UpdatesLog" />
+          <ScalarProperty Name="dateEntered" ColumnName="dateEntered" />
+          <ScalarProperty Name="defectNumber" ColumnName="defectNumber" />
+          <ScalarProperty Name="taskStatusID" ColumnName="taskStatusID" />
+          <ScalarProperty Name="updateRequester" ColumnName="updateRequester" />
+          <ScalarProperty Name="requesterID" ColumnName="requesterID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="completionPercentage" ColumnName="completionPercentage" />
+          <ScalarProperty Name="estimatedWorkHours" ColumnName="estimatedWorkHours" />
+          <ScalarProperty Name="taskName" ColumnName="taskName" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(prioritizerDBModel.Users)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="TemporaryPassword" ColumnName="TemporaryPassword" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="domainUserName" ColumnName="domainUserName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfigTable">
+      <EntityTypeMapping TypeName="prioritizerDBModel.ConfigTable">
+        <MappingFragment StoreEntitySet="ConfigTable">
+          <ScalarProperty Name="ConfigValue" ColumnName="ConfigValue" />
+          <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meetings">
+      <EntityTypeMapping TypeName="prioritizerDBModel.Meetings">
+        <MappingFragment StoreEntitySet="Meetings">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="MeetingSummaryRTF" ColumnName="MeetingSummaryRTF" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="MeetingOwner" ColumnName="MeetingOwner" />
+          <ScalarProperty Name="MeetingName" ColumnName="MeetingName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeetingTasks">
+      <EntityTypeMapping TypeName="prioritizerDBModel.MeetingTasks">
+        <MappingFragment StoreEntitySet="MeetingTasks">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeetingAttendies">
+      <EntityTypeMapping TypeName="prioritizerDBModel.MeetingAttendies">
+        <MappingFragment StoreEntitySet="MeetingAttendies">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="AttendeeID" ColumnName="AttendeeID" />
+          <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeetingCategory">
+      <EntityTypeMapping TypeName="prioritizerDBModel.MeetingCategory">
+        <MappingFragment StoreEntitySet="MeetingCategory">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="CategoryOwner" ColumnName="CategoryOwner" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeetingCategoryMap">
+      <EntityTypeMapping TypeName="prioritizerDBModel.MeetingCategoryMap">
+        <MappingFragment StoreEntitySet="MeetingCategoryMap">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="MeetingCategoryID" ColumnName="MeetingCategoryID" />
+          <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="prioritizerDBModel.Notifications">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="NotificationTypeID" ColumnName="NotificationTypeID" />
+          <ScalarProperty Name="NotificationRecipientID" ColumnName="NotificationRecipientID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagerTeamMemberRelations">
+      <EntityTypeMapping TypeName="prioritizerDBModel.ManagerTeamMemberRelations">
+        <MappingFragment StoreEntitySet="ManagerTeamMemberRelations">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="TeamMemberID" ColumnName="TeamMemberID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="attachments">
+      <EntityTypeMapping TypeName="prioritizerDBModel.attachments">
+        <MappingFragment StoreEntitySet="attachments">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="taskID" ColumnName="taskID" />
+          <ScalarProperty Name="bin" ColumnName="bin" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alerts">
+      <EntityTypeMapping TypeName="prioritizerDBModel.Alerts">
+        <MappingFragment StoreEntitySet="Alerts">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="sendEmail" ColumnName="sendEmail" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="nextAlert" ColumnName="nextAlert" />
+          <ScalarProperty Name="taskID" ColumnName="taskID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenant">
+      <EntityTypeMapping TypeName="prioritizerDBModel.Tenant">
+        <MappingFragment StoreEntitySet="Tenant">
+          <ScalarProperty Name="TenantName" ColumnName="TenantName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

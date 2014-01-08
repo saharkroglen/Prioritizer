@@ -1,0 +1,11 @@
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\bin\Debug\attachmentsDAL.dll
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\bin\Debug\attachmentsDAL.pdb
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\obj\Debug\attachmentsDAL.dll
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\obj\Debug\attachmentsDAL.pdb
+C:\Users\sahark\Documents\Visual Studio 2010\Projects\Prioritizer2.0\attachmentsDAL\bin\Debug\attachmentsDAL.dll.config
+D:\Dropbox\work\Prioritizer\attachmentsDAL\bin\Debug\attachmentsDAL.dll.config
+D:\Dropbox\work\Prioritizer\attachmentsDAL\bin\Debug\attachmentsDAL.dll
+D:\Dropbox\work\Prioritizer\attachmentsDAL\bin\Debug\attachmentsDAL.pdb
+D:\Dropbox\work\Prioritizer\attachmentsDAL\obj\Debug\attachmentsDAL.dll
+D:\Dropbox\work\Prioritizer\attachmentsDAL\obj\Debug\attachmentsDAL.pdb

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://54.235.151.96:80" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="http://54.235.151.96/prioritizerService" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="amazonDeploy" publishMethod="FTP" replaceMatchingFiles="False" userName="PrioritizerFTP" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8DapZpB2uUiQRjpP6QrzqAAAAAACAAAAAAAQZgAAAAEAACAAAAB8NIpqswcNUqaNslddx6zWKasK7HVPgCE2fks4CygH8gAAAAAOgAAAAAIAACAAAACshbRfjGTXOWiHVrh9Dz5kYOLC3uE4DwZ4iivxzhdtDCAAAACUgiJ/li/IICXpv0IgnGQkQ/2UD8acz/OrvK4Ay6VpDEAAAADrPosL+4h29shJagwOR5iVX/nsn45RPNWa+s1aXAdf8QeXGh+I4waNs3yJr7QwMeyFm7Zz0Da7SJjKJtMulvCD" SelectedForPublish="True">
+    <file relUrl="PrioritizerService.svc" publishTime="01/03/2013 17:58:14" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="06/18/2013 16:28:40" />
+    <file relUrl="bin/log4net.xml" publishTime="06/23/2013 11:22:51" />
+    <file relUrl="bin/log4net.dll" publishTime="06/23/2013 11:22:51" />
+    <file relUrl="bin/PrioritizerService.dll" publishTime="06/27/2013 20:26:24" />
+  </publishProfile>
+</publishData>

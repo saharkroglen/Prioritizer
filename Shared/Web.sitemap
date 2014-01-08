@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Campaign Dashboard" description="Campaign Dashboard" url="~/CampaignsDashboard.aspx">
+    <siteMapNode url="Account.aspx" title="Account" description="">
+      <siteMapNode url="UserEdit.aspx" title="Edit User" description="" />
+      <siteMapNode url="LOBEdit.aspx" title="Edit LOB Group" description="" />
+    </siteMapNode>
+    <siteMapNode url="FolderStatistics.aspx" title="Folder Statistics" description="">
+      <siteMapNode url="CampaignStatistics.aspx" title="Campaign Statistics" description="">
+        <siteMapNode url="CampaignCodes.aspx" title="Code List" description=""/>
+        <siteMapNode url="CodeStatistics.aspx" title="Code Statistics" description="" />
+        <siteMapNode url="CodeEdit.aspx" title="Edit Code" description="" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="CampaignEdit.aspx" title="Create New Campaign" description="" />
+
+    <siteMapNode url="Reports.aspx" title="Reporting Dashboard" description="Reporting Dashboard">
+      <siteMapNode url="ReportsTasks.aspx" title="Scheduled Report Tasks" description="Scheduled Report Tasks"></siteMapNode>
+      <siteMapNode url="ReportsGroup.aspx" title="Group Report" description="Group Report"></siteMapNode>
+      <siteMapNode url="ReportsSubscriber.aspx" title="Subscriber Report" description="Subscriber Report"></siteMapNode>
+      <siteMapNode url="ReportsHitLog.aspx" title="Hit Log Report" description="Hit Log Report"></siteMapNode>
+      <siteMapNode url="ReportsStatistics.aspx" title="Statistic Report" description="Statistic Report"></siteMapNode>
+      <siteMapNode url="ReportsMain.aspx" title="Monthly Report" description="Monthly Report"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="Operations.aspx" title="Operations Dashboard" description="Operations Dashboard">
+      <siteMapNode url="ZeroRatedList.aspx" title="Black List" description="Black List">
+        <siteMapNode url="ZeroRatedEdit.aspx" title="Edit Black Site" description="Edit Black Site"></siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+   
+  </siteMapNode>
+
+</siteMap>

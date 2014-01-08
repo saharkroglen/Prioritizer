@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="attachDBModelStoreContainer" CdmEntityContainer="attachDBEntities">
+    <EntitySetMapping Name="attachments">
+      <EntityTypeMapping TypeName="attachDBModel.attachments">
+        <MappingFragment StoreEntitySet="attachments">
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="taskID" ColumnName="taskID" />
+          <ScalarProperty Name="bin" ColumnName="bin" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

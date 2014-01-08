@@ -1,0 +1,6 @@
+D:\Dropbox\work\Prioritizer\Shared\bin\Release\Shared.dll
+D:\Dropbox\work\Prioritizer\Shared\bin\Release\Shared.pdb
+D:\Dropbox\work\Prioritizer\Shared\bin\Release\log4net.dll
+D:\Dropbox\work\Prioritizer\Shared\bin\Release\log4net.xml
+D:\Dropbox\work\Prioritizer\Shared\obj\Release\Shared.dll
+D:\Dropbox\work\Prioritizer\Shared\obj\Release\Shared.pdb

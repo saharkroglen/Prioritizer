@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://chapleau.info">
+ <CodeSnippet Format="1.0.0">
+  <Header>
+   <Title>Singleton</Title>
+   <Shortcut>singleton</Shortcut>
+   <Description>Code snippet for singleton pattern</Description>
+   <Author>Frederick Chapleau</Author>
+   <SnippetTypes>
+   <SnippetType>Expansion</SnippetType>
+   </SnippetTypes>
+  </Header>
+  <Snippet>
+   <Declarations>
+     <Literal Editable="true">
+      <ID>classname</ID>
+      <ToolTip>Class name</ToolTip>
+      <Function>ClassName()</Function>
+      <Default>ClassNamePlaceholder</Default>
+     </Literal>
+   </Declarations>
+   <Code Language="csharp">
+		<![CDATA[
+ 
+		#region Singleton
+ 
+		private static $classname$ _instance = null;
+ 
+		private $classname$ () { }
+ 
+		public static $classname$ Instance
+		{
+			get
+			{
+				if(_instance == null)
+				{
+					$classname$ instance = new $classname$();
+					instance.Initialize();
+					_instance = instance;
+				}
+				return _instance;
+			}
+		}
+ 
+		#endregion
+ 
+		private void Initialize()
+		{
+			
+		}
+ 
+	$end$
+	]]>
+   </Code>
+  </Snippet>
+ </CodeSnippet>
+</CodeSnippets>
